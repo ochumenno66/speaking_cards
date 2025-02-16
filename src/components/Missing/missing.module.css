@@ -1,0 +1,14 @@
+.error {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+  color: var(--footer-background);
+  font-family: var(--second-family);
+  font-weight: 100;
+  font-size: 30px;
+  font-style: italic;
+  margin-top: 30px;
+}

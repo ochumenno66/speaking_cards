@@ -1,0 +1,14 @@
+:root {
+  --font-family: "Roboto", sans-serif;
+  --second-family: "Playfair Display", sans-serif;
+  --primary-color: #177165;
+  --second-color: #fff;
+  --footer-background: #0a312c;
+  --background-card: #ffe5b4;
+  --background-header: #b2f2e2;
+  --background-color: #e1f4f2;
+
+  --lava: #e6e6fa;
+  --border-color: #b2e0d4;
+  --ellowe: #ffdab9;
+}

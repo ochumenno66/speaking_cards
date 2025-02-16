@@ -1,0 +1,37 @@
+@import "../styles/variables.css";
+
+.footer {
+  max-width: 100%;
+  min-height: 66px;
+  background-color: var(--background-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--font-family);
+  color: var(--footer-background);
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 162%;
+}
+
+/*
+.ears {
+  max-width: 100%;
+  min-height: 66px;
+  background-color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--font-family);
+  color: var(--footer-background);
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 162%;
+}
+*/
