@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import styles from "./main_content.module.css";
-import CardList from "../Card/CardList";
 import { useState, useEffect } from "react";
 
 const ListItem = ({ items }) => {
@@ -14,15 +13,8 @@ const ListItem = ({ items }) => {
 */
 
   useEffect(() => {
-    const Card = CardList.map((item) => ({
-      id: item.id,
-      english: item.english,
-      transcription: item.transcription,
-      russian: item.russian,
-      tags: item.tags,
-    }));
-    setInputValue(Card);
-  }, []);
+    setInputValue(items);
+  }, [items]);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -34,8 +26,9 @@ const ListItem = ({ items }) => {
   };
 
   const handleChange = (id, field, value) => {
-    const newInputValue = [...inputValue];
-    newInputValue[id][field] = value;
+    const newInputValue = inputValue.map((item) =>
+      item.id === id ? { ...item, [field]: value } : item
+    );
     setInputValue(newInputValue);
   };
 
