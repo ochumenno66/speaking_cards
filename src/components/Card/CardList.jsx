@@ -89,9 +89,9 @@ const CardList = [
   },
 ];
 
-localStorage.setItem("speakingCards", JSON.stringify(CardList));
+//localStorage.setItem("speakingCards", JSON.stringify(CardList));
 
-//export default CardList;
+export default CardList;
 
 /*
 function saveDataToLocalStorage(cardList) {

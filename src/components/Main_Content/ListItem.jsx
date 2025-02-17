@@ -1,13 +1,27 @@
 import PropTypes from "prop-types";
 import styles from "./main_content.module.css";
+import CardList from "../Card/CardList";
 import { useState, useEffect } from "react";
 
 const ListItem = ({ items }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [inputValue, setInputValue] = useState(items);
 
+  /*
   useEffect(() => {
     setInputValue(JSON.parse(localStorage.getItem("speakingCards")));
+  }, []);
+*/
+
+  useEffect(() => {
+    const Card = CardList.map((item) => ({
+      id: item.id,
+      english: item.english,
+      transcription: item.transcription,
+      russian: item.russian,
+      tags: item.tags,
+    }));
+    setInputValue(Card);
   }, []);
 
   const handleEdit = () => {
@@ -98,15 +112,12 @@ const ListItem = ({ items }) => {
 };
 
 ListItem.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      russian: PropTypes.string,
-      english: PropTypes.string,
-      transcription: PropTypes.string,
-      tags: PropTypes.string,
-    })
-  ).isRequired,
+  items: PropTypes.arrayOf,
+  id: PropTypes.string.isRequired,
+  russian: PropTypes.string,
+  english: PropTypes.string,
+  transcription: PropTypes.string,
+  tags: PropTypes.string,
 };
 
 export default ListItem;
