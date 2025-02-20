@@ -1,9 +1,30 @@
 /*РОДИТЕЛЬ*/
 import styles from "../Card/card.module.css";
 import { useState, useEffect } from "react";
-import CardList from "./CardList";
-import CardSlieder from "./CardSlieder";
+//import CardList from "./CardList";
+import CardSlieder from "./CardSlider";
+import useLocalStorage from "../hooks/useLocalStorage";
 
+const CardContent = ({ index = 0 }) => {
+  const [items, setItems] = useLocalStorage("speakingCards", []);
+  const [currentIndex, setCurrentIndex] = useState(index);
+
+  useEffect(() => {
+    if (currentIndex >= items.length) {
+      setCurrentIndex(0);
+    }
+  }, [currentIndex, items.length]);
+
+  return (
+    <div className={styles.wrapper}>
+      <CardSlieder items={items} currentIndex={currentIndex} />
+    </div>
+  );
+};
+
+export default CardContent;
+
+/*
 const CardContent = ({ index = 0 }) => {
   const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(index);
@@ -14,6 +35,7 @@ const CardContent = ({ index = 0 }) => {
   }, []);
   */
 
+/*
   useEffect(() => {
     const Card = CardList.map((card) => ({
       id: card.id,
@@ -39,3 +61,5 @@ const CardContent = ({ index = 0 }) => {
 };
 
 export default CardContent;
+
+*/

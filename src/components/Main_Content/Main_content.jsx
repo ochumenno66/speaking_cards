@@ -1,9 +1,21 @@
 /*НА ВИДЕО ОБУЧАЮЩЕМ ЭТОТ ФАЙЛ CONTENT.JSX НЕДЕЛЯ 22 И ДАЛЕЕ*/
 import styles from "./main_content.module.css";
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 import ListItem from "./ListItem";
-import CardList from "../Card/CardList";
+import useLocalStorage from "../hooks/useLocalStorage";
 
+const Main_Content = () => {
+  const [items, setItems] = useLocalStorage("speakingCards", []);
+
+  return (
+    <main className={styles.main}>
+      <ListItem items={items} />
+    </main>
+  );
+};
+export default Main_Content;
+
+/*ЭТО ОДИН КОД
 const Main_Content = () => {
   const [items, setItems] = useState([]);
 
@@ -12,7 +24,7 @@ const Main_Content = () => {
     setItems(JSON.parse(localStorage.getItem("speakingCards")));
   }, []);
 */
-
+/*ЭТО ОДИН КОД
   useEffect(() => {
     const Card = CardList.map((item) => ({
       id: item.id,
@@ -31,3 +43,4 @@ const Main_Content = () => {
   );
 };
 export default Main_Content;
+*/

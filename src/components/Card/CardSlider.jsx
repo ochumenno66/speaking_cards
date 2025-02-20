@@ -1,6 +1,6 @@
 /*РЕБЕНОК*/
 import PropTypes from "prop-types";
-import styles from "../Card/cardSlieder.module.css";
+import styles from "../Card/cardSlider.module.css";
 import { useState } from "react";
 import Card from "./Card";
 
