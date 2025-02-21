@@ -4,7 +4,7 @@ import styles from "../Card/cardSlider.module.css";
 import { useState } from "react";
 import Card from "./Card";
 
-const CardSlieder = ({ items = [] }) => {
+const CardSlider = ({ items = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -50,9 +50,9 @@ const CardSlieder = ({ items = [] }) => {
   );
 };
 
-CardSlieder.propTypes = {
+CardSlider.propTypes = {
   items: PropTypes.array,
   currentIndex: PropTypes.number,
 };
 
-export default CardSlieder;
+export default CardSlider;
