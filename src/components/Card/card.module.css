@@ -1,10 +1,17 @@
 .wrapper {
   /*margin-top: 50px;*/
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
+.words {
+  margin-top: 130px;
+  font-family: var(--second-family);
+  color: var(--footer-background);
+  font-weight: 300;
+  font-size: 25px;
+}
 .card {
   display: flex;
   flex-direction: column;
@@ -53,19 +60,7 @@
   font-family: var(--second-family);
 }
 
-/*ВРАППЕР КОТОРЫЙ БЫЛ
-  .wrapper {
-    margin-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }*/
-
-/*
-  .wrapper {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  */
+.translateButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(135, 206, 250, 0.541);
+}

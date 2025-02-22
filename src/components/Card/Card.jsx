@@ -3,11 +3,21 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "../Card/card.module.css";
 
-const Card = (props) => {
+const Card = ({ clickButton, ...props }) => {
   const [translationVisible, setTranslationVisible] = useState(false);
 
   const handleTranslation = () => {
     setTranslationVisible(true);
+  };
+
+  const clickItem = () => {
+    handleTranslation();
+    clickButton();
+    //console.log("Кнопка нажата, перевод видим:", !translationVisible);
+  };
+
+  const handleFocus = (e) => {
+    e.target.focus();
   };
 
   return (
@@ -15,7 +25,11 @@ const Card = (props) => {
       <h1 className={styles.english}>{props.english}</h1>
       <p className={styles.transcription}>{props.transcription}</p>
       {!translationVisible && (
-        <button onClick={handleTranslation} className={styles.translateButton}>
+        <button
+          onClick={clickItem}
+          onFocus={handleFocus}
+          className={styles.translateButton}
+        >
           Показать перевод
         </button>
       )}
